@@ -1,53 +1,63 @@
 package com.wylie.springboot_simple.entity;
 
 public class User {
-    private Long id;
+    private Integer id;
 
-    private String userName;
+    private String username;
 
-    private String passWord;
+    private String name;
 
-    private String userSex;
+    private String password;
 
-    private String nickName;
+    private String salt;
 
-    public Long getId() {
+    private Byte state;
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName == null ? null : userName.trim();
+    public void setUsername(String username) {
+        this.username = username == null ? null : username.trim();
     }
 
-    public String getPassWord() {
-        return passWord;
+    public String getName() {
+        return name;
     }
 
-    public void setPassWord(String passWord) {
-        this.passWord = passWord == null ? null : passWord.trim();
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
     }
 
-    public String getUserSex() {
-        return userSex;
+    public String getPassword() {
+        return password;
     }
 
-    public void setUserSex(String userSex) {
-        this.userSex = userSex == null ? null : userSex.trim();
+    public void setPassword(String password) {
+        this.password = password == null ? null : password.trim();
     }
 
-    public String getNickName() {
-        return nickName;
+    public String getSalt() {
+        return salt;
     }
 
-    public void setNickName(String nickName) {
-        this.nickName = nickName == null ? null : nickName.trim();
+    public void setSalt(String salt) {
+        this.salt = salt == null ? null : salt.trim();
+    }
+
+    public Byte getState() {
+        return state;
+    }
+
+    public void setState(Byte state) {
+        this.state = state;
     }
 }

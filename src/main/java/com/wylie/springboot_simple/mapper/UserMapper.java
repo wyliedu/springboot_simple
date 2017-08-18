@@ -1,22 +1,22 @@
 package com.wylie.springboot_simple.mapper;
 
-
-import java.util.List;
+import org.apache.ibatis.annotations.Options;
 
 import com.wylie.springboot_simple.entity.User;
 
-
-
 public interface UserMapper {
-	
-	List<User> getAll();
-	
-	User getOne(Long id);
+    int deleteByPrimaryKey(Integer id);
 
-	void insert(User user);
+    //@Options(useGeneratedKeys = true, keyProperty = "id", keyColumn = "id") 
+    int insert(User record);
 
-	void update(User user);
+    int insertSelective(User record);
 
-	void delete(Long id);
+    User selectByPrimaryKey(Integer id);
 
+    int updateByPrimaryKeySelective(User record);
+
+    int updateByPrimaryKey(User record);
+    
+    User findByUsername(String username);
 }

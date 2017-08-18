@@ -26,4 +26,8 @@ public class UserService {
 			throw new NotFoundException("9000", "eee");
 		}
     }
+	
+	public User findByUsername(String username){
+		return this.userMapper.findByUsername(username);
+	}
 }

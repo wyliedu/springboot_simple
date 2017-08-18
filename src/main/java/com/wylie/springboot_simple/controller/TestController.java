@@ -39,7 +39,7 @@ public class TestController{
     	return result;
 	}
 
-    @Cacheable(value="user-key",key="'allUser'")
+/*    @Cacheable(value="user-key",key="'allUser'")
     @RequestMapping("/getUsers")
 	public List<User> getUsers() {
 		List<User> users=userMapper.getAll();
@@ -48,23 +48,19 @@ public class TestController{
 	}
 	
     @RequestMapping("/getUser")
-    public User getUser(Long id) {
+    public User getUser(Integer id) {
     	User user=userMapper.getOne(id);
         return user;
-    }
+    }*/
     
     @RequestMapping("/add")
     public void save(User user) {
     	userMapper.insert(user);
     }
     
-    @RequestMapping(value="update")
-    public void update(User user) {
-    	userMapper.update(user);
-    }
     
     @RequestMapping(value="/delete/{id}")
-    public void delete(@PathVariable("id") Long id) {
-    	userMapper.delete(id);
+    public void delete(@PathVariable("id") Integer id) {
+    	userMapper.deleteByPrimaryKey(id);
     }
 }

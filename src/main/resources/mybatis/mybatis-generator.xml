@@ -16,12 +16,12 @@
             <property name="forceBigDecimals" value="false"/>  
         </javaTypeResolver>  
         <!--生成Model类存放位置-->  
-        <javaModelGenerator targetPackage="com.wylie.springboot.service.entity" targetProject="src/main/java">  
+        <javaModelGenerator targetPackage="com.wylie.springboot_simple.entity" targetProject="src/main/java">  
             <property name="enableSubPackages" value="true"/>  
             <property name="trimStrings" value="true"/>  
         </javaModelGenerator>  
         <!--生成映射文件存放位置-->  
-        <sqlMapGenerator targetPackage="mybatis.mapper.test1" targetProject="src/main/resources">  
+        <sqlMapGenerator targetPackage="mybatis.mapper" targetProject="src/main/resources">  
             <property name="enableSubPackages" value="true"/>  
         </sqlMapGenerator>  
         <!--生成Dao类存放位置-->  
@@ -30,10 +30,14 @@
                 type="MIXEDMAPPER",生成基于注解的Java Model 和相应的Mapper对象  
                 type="XMLMAPPER",生成SQLMap XML文件和独立的Mapper接口  
         -->  
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.wylie.springboot.service.mapper.test1" targetProject="src/main/java">  
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.wylie.springboot_simple.mapper" targetProject="src/main/java">  
             <property name="enableSubPackages" value="true"/>  
         </javaClientGenerator>  
         <!--生成对应表及类名-->  
-        <table tableName="users" domainObjectName="User2" enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true"></table>  
+        <table tableName="user" domainObjectName="User" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table> 
+        <table tableName="role" domainObjectName="Role" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>  
+        <table tableName="authority" domainObjectName="Authority" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>  
+        <table tableName="role_authority" domainObjectName="RoleAuthority" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>  
+        <table tableName="user_role" domainObjectName="UserRole" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>   
     </context>  
 </generatorConfiguration>  
