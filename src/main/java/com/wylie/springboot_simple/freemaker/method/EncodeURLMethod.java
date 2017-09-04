@@ -4,8 +4,6 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.List;
 
-import javax.servlet.http.HttpServletResponse;
-
 import org.springframework.stereotype.Component;
 
 import freemarker.template.SimpleScalar;
@@ -18,16 +16,6 @@ import freemarker.template.TemplateModelException;
  */
 @Component("encodeURL")
 public class EncodeURLMethod implements TemplateMethodModelEx {
-
-	private final HttpServletResponse response;
-
-	/**
-	 * @param response
-	 */
-	public EncodeURLMethod(final HttpServletResponse response) {
-		this.response = response;
-	}
-
 
 	@Override
 	public Object exec(@SuppressWarnings("rawtypes") final List arguments) throws TemplateModelException {
