@@ -21,8 +21,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.support.RequestContextUtils;
 
+import com.wylie.springboot_simple.mapper.SysUserDao;
+
 @Controller
 public class ThymeleafController extends BasePageController{
+	
+	@Autowired
+	private SysUserDao userDao;
 	
     @RequestMapping("/login")
 	public String login(Model model) throws InterruptedException {
@@ -64,6 +69,7 @@ public class ThymeleafController extends BasePageController{
     
     @RequestMapping("/index")
 	public String hello(Locale locale, Model model) throws InterruptedException {
+    	int count = userDao.queryAllMenuId();
 		model.addAttribute("greeting", "hi");
 		return "index";
 	}

@@ -1,0 +1,291 @@
+exception:
+    code:
+        9999: 
+            en: System exception.
+            es: Excepción del sistema.
+            pt: Excepção de sistema.
+        9998: 
+            en: Validation failed.       
+            es: Validación fallida.
+            pt: Validação falha.
+        9000:
+            en: The record don't exist.
+            es: El registro no existe.
+            pt: O recorde não existe.
+        50040101: 
+            en: Please input a search condition or select a chemical category.
+            es: Por favor, introduzca una condición de búsqueda o una categoría química.
+            pt: Faz favor de introduzir uma condição de busca ou selecionar uma categoria química.
+        50040102: 
+            en: Search condition and chemical category can't be retrieved at the same time.
+            es: La condición de búsqueda y la catégoría química no pueden recuperarse al mismo tiempo.
+            pt: Seleccionar condição e categoria química não conseguem ser recuperados ao mesmo tempo.
+        50040201:
+            en: Category already exists.
+            es: La categoría ya existe.
+            pt: A categoria já existe.
+        50040501:
+            en: Email already exists.
+            es: Este email ya existe.
+            pt: O email já existe.
+        50040502:
+            en: Passwords are not the same.
+            es: Las contraseñas no coinciden.
+            pt: As senhas não são iguais.
+        50040503:
+            en: Please enter the correct password!
+            es: Por favor, introduzca la contraseña correcta!
+            pt: Faz favor de introduzir a senha correta!
+        50040504:
+            en: Authentication failed
+            es: Autenticación fallida
+            pt: Autentição falha.
+        50040505:
+            en: This account does not exist. Please register first!
+            es: Esta cuenta no existe. Por favor, regístrese primero.
+            pt: Esta conta não existe. Faz favor de registar primero.
+        50040506:
+            en: This account does not exist.
+            es: Esta cuenta no existe.
+            pt: Esta conta não existe.
+        50040507:
+            en: Token is expired.
+            es: La sesión ha caducado.
+            pt: A sinal é expirada.
+        50040508:
+            en: This account is inactive Please click Activate User to activate this email.
+            es: Esta cuenta está inactiva por favor haga clic en Activar Usuario para activar este correo electrónico.
+            pt: Esta conta é inativa, por favor clique em Ativar Usuário para ativar este email.
+        50040509:
+            en: Please enter the correct email address!
+            es: Por favor, introduzca la dirección email correcta!
+            pt: Faz favor de introduzir o seu endereço eletrônico correto!
+        50040510:
+            en: Email is required.
+            es: Email requerido.
+            pt: O Email é necessário.
+        50040511:
+            en: This account has been combined with OKCHEM account.
+            es: 
+            pt: A conta já tinha sido combinada com conta de OKCHEM.
+        50040512:
+            en: Email can not be changed.
+            es: 
+            pt: O email não pode ser mudado.
+        50040513:
+            en: This account is active.
+            es: 
+            pt: 
+        50040514:
+            en: Email need active.
+            es: 
+            pt: 
+        50040520:
+            en: User not found.
+            es: Usuario no encontrado.
+            pt: Utilizador não é encontrado.
+        50040521:
+            en: There are two or more default addresses.
+            es: Hay dos o más direcciones predeterminadas.
+            pt: Há dois ou more endereços de incumprimento.
+        50040522:
+            en: The value of the field "newPassword" is not the same as the field "newPasswordVerify".
+            es: El valor del campo "newPassword" no es igual que el campo "newPasswordVerify".
+            pt: O valor do campo "newPassword" não é igual ao campo "newPasswordVerify".
+        50040527:
+            en: This account can not change password.
+            es: 
+            pt: Esta conta não pode mudar senha.
+        50040528:
+            en: The default company cannot be deleted.
+            es: 
+            pt: 
+        50040529:
+            en: The company name already exists.
+            es: 
+            pt: 
+        50040530:
+            en: You can add 20 companies information at most.
+            es: 
+            pt: 
+        50040701:
+            en: Can not send an inquiry without products.
+            es: No se puede enviar una consulta sin productos.
+            pt: Não pode enviar uma consulta sem produtos.
+        50040702:
+            en: Total payment percentage must be 100.
+            es: 
+            pt: Todas as percentagens de pagamento deve ser 100.
+        50040703:
+            en: When you choose the option "Others", the field must not be empty
+            es: cuando elige la opción "Otros", el campo no debe ser vacío.
+            pt: Quando escolhe a opção "Outros", o campo não pode ser vazio.
+        50040704:
+            en: You aren't the owner for the current record
+            es: No es el propietario del registro actual
+            pt: Não é o propietário do recorde atual.
+        50040705:
+            en: can not find custRequest
+            es: No se encuentra custRequest
+            pt: Não se consegue encontrar custRequest
+        50040706:
+            en: The product %s is/are not available. Please contact supplier for more information.
+            es: El producto %s no es/son disponible. Por favor contacte el proveedor para más información. 
+            pt: Producto %s não é/são disponíveis. Faz favor de contatar fornecedor para mais informações. 
+        50040707:
+            en: can not discuss the quotation while the status is not CRQ_REPLIED or CRQ_RE_QUOTED.
+            es: No podemos discutir la el precio cuando el estado no es CRQ_REPLIED o CRQ_RE_QUOTED
+            pt: Não pode discutir a cotação quando a situação não é CRQ_REPLIED ou CRQ_RE_QUOTED.
+        50040708:
+            en: The product does not exist. Please contact supplier for more information.
+            es: El producto no existe. Por favor contacte el proovedor para más información.
+            pt: O produto não existe. Faz favor de contatar fornecedor para mais informações.
+        50040709:
+            en: Number must be greater than zero.
+            es: El número debe ser más grande que cero.
+            pt: O número deve ser maior do que zero.
+        50040710:
+            en: Western Union percentage must be 100
+            es: 
+            pt: A percentagem da União Ocidental deve ser 100.
+        50040711:
+            en: Payment terms cannot be more than 3 kinds.
+            es: 
+            pt: Os termos de pagamento não podem ser mais do que 3 tipos.
+        50040523:
+            en: The current password is incorrect.
+            es: La contraseña actual es incorrecta.
+            pt: A senha atual é incorreta.
+        50040103:
+            en: The product does not exist.
+            es: El producto no existe.
+            pt: O produto não existe.
+        50040104:
+            en: The product has been collection.
+            es: 
+            pt: O produto tinha sido seleccionado.
+        50040105:
+            en: Some of the record you want to delete do not exist.
+            es: 
+            pt: Alguns de recordes que quer eliminar não existem.
+        50040524:
+            en: The user's account has expired.
+            es: La cuenta de usuario ha caducado.
+            pt: A conta de utilizador tinha espirado.
+        50040525:
+            en: User has been activated.
+            es: El Usuario ha sido activado.
+            pt: Utilizador já tinha sido ativado.
+        50040601:
+            en: You have no permission to cancel the order.
+            es: No tiene permiso para cancelar el pedido.
+            pt: Não tem permissão para cancelar a ordem.
+        50040602:
+            en: The product is not available. Please contact supplier for more information.
+            es: El producto no es disponible. Por favor contacte el proveedor para más información.
+            pt: O produto não é disponível. Faz favor de contatar fornecedor para mais informações.
+        50040603:
+            en: PO report error when ftl to html.
+            es: informe de error PO cuando ftl a html.
+            pt: PO informa erro quando ftl a html.
+        50040604:
+            en: PO report error when html to pdf.
+            es: informe de error PO cuando html a pdf.
+            pt: PO informa erro quando ftl a pdf.
+        50040605:
+            en: The product does not exist. Please contact supplier for more information.
+            es: El producto no existe. Por favor contacte el proveedor para más información.
+            pt: O produto não existe. Faz favor de contatar fornecedor para mais informações.
+        50040606:
+            en: when you choose the option "Others", the field must not be empty.
+            es: cuando se elige la opción "Otros", el cmapo no debe ser vacío.
+            pt: Quando escolhe a opção "Outros", o campo não pode ser vazio.
+        50040607:
+            en: percentage must be a number.
+            es: el porcentaje debe ser un número.
+            pt: A percentagem deve ser o número.
+        50040608:
+            en: percentage count must be 100.
+            es: el recuento de porcentajes debe ser 100.
+            pt: A contagem de percentagem deve ser 100.
+        50040202:
+            en: The Code does not exist.
+            es: El Código no existe.
+            pt: O código não existe.
+        50040609:
+            en: The order has already been canceled.
+            es: El pedido ya ha sido cancelado.
+            pt: A ordem já tinha sido cancelada.
+        50040610:
+            en: You can only select 100 products at most.
+            es: 
+            pt: Apenas pode seleccionar 100 products no máximo.
+        50040611:
+            en: The Order doesn't exist.
+            es: 
+            pt: A ordem não existe.
+        50040526:
+            en: Required field can not be blank.
+            es: Los campos requeridos no deben estar en blanco.
+            pt: O campo necessário não pode ser em branco.
+        50041001:
+            en: Only support file with extensions:%s
+            es: Solo acepta archivos con extensiones:%s
+            pt: Apenas suporta arquivo com extensão:%s
+        50041002:
+            en: Failed to upload file
+            es: Fallo al subir archivo
+            pt: Carregar arquivo falha.
+        50041003:
+            en: The field file exceeds its maximum permitted size of %s.
+            es: El campo de archivo supera el tamaño máximo de %s.
+            pt: O campo de arquivo excede o máximo tamanho permitido de %s.
+        50040801:
+            en: Please Upload 8 files at most!​
+            es: Por favor, suba 8 archivos como máximo!
+            pt: Faz favor de carregar 8 arquivos no máximo!
+        50040820:
+            en: The sourcing doesn't exist​
+            es: El sourcing no existe.
+            pt: A aquisição não existe.
+        50040821:
+            en: The sourcing status doesn't exist. 
+            es: El estado de sourcing no existe.
+            pt: A situação de aquisição não existe.
+        50040822:
+            en: The sourcing's current status is "Replied".
+            es: El estado actual del sourcing es "Respondido".
+            pt: A situação atual de aquisição é "respondido"
+        50041101:
+            en: No permissions.
+            es: 
+            pt: Não permissão.
+        50041102:
+            en: News tag's maximum number is 20.
+            es:         
+            pt: O máximo número de etiqueta das notícias é 20.
+        50041103:
+            en: The %s is not selected.
+            es:                    
+            pt: O %s não está seleccionado.  
+        50041104:
+            en: Invalid input type parameter.
+            es: 
+            pt: Parâmetro de tipo de inserção inválido.
+        50041201:
+            en: The Service Request doesn't exist.
+            es: 
+            pt: 
+        50050527:
+            en: Captcha code has expired.  
+            es: El código de Captcha ha caducado.
+            pt: O código Captcha expirou.
+        50050528:
+            en: Captcha code failed to match.  
+            es: El código Captcha no coincide.
+            pt: Código Captcha falhou ao combinar.
+        50050529:
+            en: Token expired while setting user customizations.  
+            es:         
+            pt: Quando fixa customizações de utilizador, o código expira.
+                          
