@@ -86,11 +86,6 @@ public class TestController{
     	userMapper.insert(user);
     }
     
-    
-    @RequestMapping(value="/delete/{id}")
-    public void delete(@PathVariable("id") Integer id) {
-    	userMapper.deleteByPrimaryKey(id);
-    }
    
     @RequestMapping(value="save",method=RequestMethod.POST)
     public String save(){

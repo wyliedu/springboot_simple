@@ -1,17 +1,18 @@
 package com.wylie.springboot_simple.controller;
 
-import java.text.DateFormat;
-import java.util.Date;
-import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.AuthenticationException;
+import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,13 +22,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.support.RequestContextUtils;
 
-import com.wylie.springboot_simple.mapper.SysUserDao;
+import com.wylie.springboot_simple.services.UserService;
 
 @Controller
 public class ThymeleafController extends BasePageController{
 	
 	@Autowired
-	private SysUserDao userDao;
+	private UserService userService;
 	
     @RequestMapping("/login")
 	public String login(Model model) throws InterruptedException {
@@ -38,7 +39,6 @@ public class ThymeleafController extends BasePageController{
     @RequestMapping(value="/login",method=RequestMethod.POST)
 	public String login(HttpServletRequest request,Map<String, Object> map, Model model) throws InterruptedException {
     	String exception = (String) request.getAttribute("shiroLoginFailure");
-    	 
         System.out.println("exception=" + exception);
         String msg = "";
         if (exception != null) {
@@ -63,14 +63,11 @@ public class ThymeleafController extends BasePageController{
     
     @RequestMapping("/")
 	public String hel(Locale locale, Model model) throws InterruptedException {
-		model.addAttribute("greeting", "hi");
 		return "index";
 	}
     
     @RequestMapping("/index")
 	public String hello(Locale locale, Model model) throws InterruptedException {
-    	int count = userDao.queryAllMenuId();
-		model.addAttribute("greeting", "hi");
 		return "index";
 	}
 

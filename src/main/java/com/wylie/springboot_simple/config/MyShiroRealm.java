@@ -3,6 +3,7 @@ package com.wylie.springboot_simple.config;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
+import org.apache.shiro.authc.LockedAccountException;
 import org.apache.shiro.authc.SimpleAuthenticationInfo;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
@@ -14,18 +15,27 @@ import com.wylie.springboot_simple.entity.Role;
 import com.wylie.springboot_simple.entity.User;
 import com.wylie.springboot_simple.services.UserService;
 import com.wylie.springboot_simple.mapper.RoleMapper;
+import com.wylie.springboot_simple.mapper.RolePermissionMapper;
+import com.wylie.springboot_simple.mapper.UserMapper;
+import com.wylie.springboot_simple.mapper.UserRoleMapper;
 
 import java.util.List;
 
 import javax.annotation.Resource;
 
+/**
+ * 身份校验核心类
+ * @author 13612
+ *
+ */
 public class MyShiroRealm extends AuthorizingRealm {
 
     @Resource
-    private UserService userService;
-    
+    private UserMapper userMapper;
     @Resource
-    private RoleMapper RoleMapper;
+    private UserRoleMapper userRoleMapper;
+    @Resource
+    private RolePermissionMapper rolePermissionMapper;
     
     /**
      * 此方法调用  hasRole,hasPermission的时候才会进行回调.
@@ -54,10 +64,10 @@ public class MyShiroRealm extends AuthorizingRealm {
         SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
         User userInfo  = (User)principals.getPrimaryPrincipal();
         //User userInfo = userService.findByUsername(username);
-        List<Role> list = this.RoleMapper.getRoleList(userInfo.getId());
+        List<Role> list = this.userRoleMapper.getRoleListByUserId(userInfo.getId());
         for(Role role:list){
-            authorizationInfo.addRole(role.getRolename());
-            authorizationInfo.addStringPermissions(this.RoleMapper.getAuthorityList(role.getId()));
+            authorizationInfo.addRole(role.getRoleName());
+            authorizationInfo.addStringPermissions(this.rolePermissionMapper.getPermissionByRoleId(role.getId()));
         }
         return authorizationInfo;
     }
@@ -72,15 +82,18 @@ public class MyShiroRealm extends AuthorizingRealm {
         System.out.println(token.getCredentials());
         //通过username从数据库中查找 User对象，如果找到，没找到.
         //实际项目中，这里可以根据实际情况做缓存，如果不做，Shiro自己也是有时间间隔机制，2分钟内不会重复执行该方法
-        User userInfo = userService.findByUsername(username);
+        User userInfo = userMapper.findByUsername(username);
         System.out.println("----->>userInfo="+userInfo);
         if(userInfo == null){
             return null;
+        }else if(userInfo.getState().equals("dis")){
+        	throw new LockedAccountException("账号已被锁定,请联系管理员");
         }
+        //userInfo.setPermissions(userService.findPermissions(user));
         SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(
                 userInfo.getUsername(), //用户名
                 userInfo.getPassword(), //密码
-                //ByteSource.Util.bytes(userInfo.getUsername()+userInfo.getSalt()),//salt=username+salt
+                ByteSource.Util.bytes(userInfo.getUsername()), 
                 getName()  //realm name
         );
         return authenticationInfo;
