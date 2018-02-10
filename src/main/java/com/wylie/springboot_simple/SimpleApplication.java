@@ -25,10 +25,10 @@ import com.github.pagehelper.PageHelper;
 @EnableWebMvc
 @ServletComponentScan
 @MapperScan("com.wylie.springboot_simple.mapper")
-public class Application {
+public class SimpleApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
+		SpringApplication.run(SimpleApplication.class, args);
 	}
 	
 	@Bean

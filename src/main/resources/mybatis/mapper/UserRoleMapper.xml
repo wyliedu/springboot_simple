@@ -68,4 +68,10 @@
       role_id = #{roleId,jdbcType=BIGINT}
     where id = #{id,jdbcType=BIGINT}
   </update>
+  
+   <select id="getRoleListByUserId" resultType="com.wylie.springboot_simple.entity.Role">
+    select b.*
+    from sys_user_role a,sys_role b
+    where a.role_id=b.id and a.user_id=#{userId}
+  </select>
 </mapper>

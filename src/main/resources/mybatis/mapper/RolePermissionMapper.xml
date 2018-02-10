@@ -68,4 +68,10 @@
       permission_id = #{permissionId,jdbcType=BIGINT}
     where id = #{id,jdbcType=BIGINT}
   </update>
+  
+    <select id="getPermissionByRoleId">
+    select b.permission
+    from sys_role_permission a,sys_permission b
+    where b.id=a.permission_id and role_id=#{roleId}
+  </select>
 </mapper>

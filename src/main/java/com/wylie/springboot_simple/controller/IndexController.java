@@ -20,15 +20,21 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.LocaleResolver;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.support.RequestContextUtils;
 
 import com.wylie.springboot_simple.services.UserService;
 
 @Controller
-public class ThymeleafController extends BasePageController{
+public class IndexController extends BasePageController{
 	
-	@Autowired
-	private UserService userService;
+	@RequestMapping(value="/logout",method=RequestMethod.GET)  
+    public String logout(RedirectAttributes redirectAttributes ){ 
+        //使用权限管理工具进行用户的退出，跳出登录，给出提示信息
+        SecurityUtils.getSubject().logout();  
+        redirectAttributes.addFlashAttribute("message", "您已安全退出");  
+        return "redirect:/login";
+    } 
 	
     @RequestMapping("/login")
 	public String login(Model model) throws InterruptedException {
